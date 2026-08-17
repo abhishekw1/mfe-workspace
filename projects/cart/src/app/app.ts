@@ -9,6 +9,6 @@ import { SharedService } from '@demo/shared';
 })
 export class App {
   sharedService = inject(SharedService);
-  protected readonly cart = this.sharedService.getCart();
+  protected readonly cart = this.sharedService.cart;
   protected readonly cartTotal = this.sharedService.cartTotal;
 }

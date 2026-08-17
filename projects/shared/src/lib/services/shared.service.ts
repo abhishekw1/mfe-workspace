@@ -130,15 +130,6 @@ export class SharedService {
     this._cart().reduce((sum, item) => sum + item.price, 0),
   );
 
-  // Methods just need to return the signal, or components can use the public properties above
-  getProducts() {
-    return this.productData;
-  }
-
-  getCart() {
-    return this.cart;
-  }
-
   addToCart(product: Product) {
     this._cart.update((currentCart) => {
       if (currentCart.find((prod) => prod.id == product.id)) {
