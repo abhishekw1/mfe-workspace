@@ -1,0 +1,111 @@
+<div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+  <h1 class="text-2xl font-extrabold text-gray-900 mb-8">Shopping Cart</h1>
+
+  @if (cart().length > 0) {
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- Cart Items List -->
+      <div
+        class="lg:col-span-8 bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+      >
+        <ul role="list" class="divide-y divide-gray-200">
+          @for (item of cart(); track $index) {
+            <li class="flex py-6 px-4 sm:px-6 hover:bg-gray-50 transition-colors">
+              <!-- Thumbnail -->
+              <div
+                class="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-md overflow-hidden border border-gray-200"
+              >
+                <img
+                  [src]="item.thumbnail"
+                  [alt]="item.title"
+                  class="w-full h-full object-cover object-center"
+                />
+              </div>
+
+              <!-- Item Details -->
+              <div class="ml-4 flex flex-1 flex-col justify-between">
+                <div>
+                  <div class="flex justify-between text-base font-semibold text-gray-900">
+                    <h3>{{ item.title }}</h3>
+                    <p class="ml-4">{{ item.price }}</p>
+                  </div>
+                  <p class="mt-1 text-sm text-gray-500 line-clamp-2 pr-12">
+                    {{ item.description }}
+                  </p>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex flex-1 items-end justify-between text-sm">
+                  <p class="text-gray-500">Qty {{item.quantity}}</p>
+                  <button
+                    type="button"
+                    class="font-medium text-red-600 hover:text-red-500 transition-colors"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Order Summary Card -->
+      <div
+        class="lg:col-span-4 bg-white border border-gray-200 rounded-lg shadow-sm p-6 h-fit sticky top-6"
+      >
+        <h2 class="text-lg font-medium text-gray-900 mb-4">Order Summary</h2>
+
+        <div class="flow-root">
+          <dl class="-my-4 text-sm divide-y divide-gray-200">
+            <div class="flex items-center justify-between py-4">
+              <dt class="text-gray-600">Subtotal ({{ cart().length }} items)</dt>
+              <dd class="font-medium text-gray-900">{{ cartTotal() }}</dd>
+            </div>
+            <div class="flex items-center justify-between py-4">
+              <dt class="text-gray-600">Shipping</dt>
+              <dd class="font-medium text-green-600">Free</dd>
+            </div>
+            <div class="flex items-center justify-between py-4 text-base font-bold text-gray-900">
+              <dt>Total</dt>
+              <dd>{{ cartTotal() }}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <button
+          class="w-full mt-6 bg-blue-600 border border-transparent rounded-lg shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+        >
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  } @else {
+    <!-- Empty State -->
+    <div class="text-center py-16 bg-white border border-gray-200 rounded-lg shadow-sm">
+      <svg
+        class="mx-auto h-12 w-12 text-gray-400"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+        />
+      </svg>
+      <h3 class="mt-2 text-sm font-semibold text-gray-900">Your cart is empty</h3>
+      <p class="mt-1 text-sm text-gray-500">Looks like you haven't added anything yet.</p>
+      <div class="mt-6">
+        <button
+          type="button"
+          class="inline-flex items-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+        >
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  }
+</div>

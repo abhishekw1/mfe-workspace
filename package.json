@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:all": "concurrently \"ng serve mfe1\" \"ng serve mfe2\" \"ng serve shell\"",
+    "start:all": "concurrently \"ng serve products\" \"ng serve cart\" \"ng serve shell\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

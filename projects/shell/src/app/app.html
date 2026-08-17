@@ -1,8 +1,7 @@
-<nav class="flex gap-5 text-white p-4 bg-indigo-500">
+<nav class="flex justify-between text-white p-4 bg-indigo-500">
   <a routerLink="/">Home</a>
-  <a routerLink="/remote">Remote App</a>
+  <a routerLink="/cart">Go to Cart : {{ cartItems() }}</a>
 </nav>
 <main class="m-4">
-  <ng-container #mfe2></ng-container>
   <router-outlet />
 </main>

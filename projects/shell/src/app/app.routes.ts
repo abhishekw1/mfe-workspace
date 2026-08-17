@@ -8,7 +8,7 @@ export const routes: Routes = [
     component: Home,
   },
   {
-    path: 'remote',
-    loadComponent: () => loadRemoteModule('mfe1', './Component').then((m) => m.App),
+    path: 'cart',
+    loadComponent: () => loadRemoteModule('cart', './Component').then((m) => m.App),
   },
 ];

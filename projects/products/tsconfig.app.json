@@ -3,7 +3,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/shell",
+    "outDir": "../../dist/products",
     "rootDir": "../../",
     "types": []
   },
