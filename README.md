@@ -60,4 +60,4 @@ For more information on using the Angular CLI, including detailed command refere
 
 
 ```ng g @angular-architects/native-federation:init --project shell --port 4200 --type dynamic-host```
-```ng g @angular-architects/native-federation:init --project mfe2 --port 4202 --type remote```
+```ng g @angular-architects/native-federation:init --project cart --port 4202 --type remote```

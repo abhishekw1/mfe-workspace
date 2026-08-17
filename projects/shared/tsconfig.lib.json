@@ -3,10 +3,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/shell",
+    "outDir": "../../shared",
     "rootDir": "../../",
+    "declaration": true,
+    "declarationMap": true,
     "types": []
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["src/**/*.spec.ts"]
+  "exclude": ["**/*.spec.ts"]
 }
