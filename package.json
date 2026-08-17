@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:all": "concurrently \"ng serve mfe1\" \"ng serve mfe2\" \"ng serve shell\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -11,19 +12,48 @@
   "private": true,
   "packageManager": "pnpm@11.21.0",
   "dependencies": {
+    "@angular/animations": "^21.2.0",
     "@angular/common": "^21.2.0",
     "@angular/compiler": "^21.2.0",
     "@angular/core": "^21.2.0",
     "@angular/forms": "^21.2.0",
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
+    "@softarc/native-federation-node": "^3.3.4",
+    "es-module-shims": "^1.5.12",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-architects/native-federation": "^21.2.5",
+    "@angular-devkit/build-angular": "^21.2.21",
+    "@angular/build": "^21.2.21",
     "@angular/cli": "^21.2.21",
     "@angular/compiler-cli": "^21.2.0",
+    "@tailwindcss/postcss": "^4.1.12",
+    "concurrently": "^10.0.4",
+    "jsdom": "^28.0.0",
+    "ng-packagr": "^21.2.0",
+    "postcss": "^8.5.3",
     "prettier": "^3.8.1",
-    "typescript": "~5.9.2"
+    "tailwindcss": "^4.1.12",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8",
+    "storybook": "^10.5.8",
+    "@storybook/angular-vite": "^10.5.8",
+    "@chromatic-com/storybook": "latest",
+    "@storybook/addon-vitest": "^10.5.8",
+    "@storybook/addon-a11y": "^10.5.8",
+    "@storybook/addon-docs": "^10.5.8",
+    "@storybook/addon-onboarding": "^10.5.8",
+    "@types/node": "^20",
+    "@angular-devkit/architect": "^0.2102.0",
+    "@angular-devkit/core": "^21.2.0",
+    "@analogjs/vite-plugin-angular": "latest",
+    "vite": "latest",
+    "@compodoc/compodoc": "latest",
+    "@vitest/browser-playwright": "4.1.10",
+    "@vitest/coverage-v8": "4.1.10",
+    "playwright": "latest"
   }
 }
